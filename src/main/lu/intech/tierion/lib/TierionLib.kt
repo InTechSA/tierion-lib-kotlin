@@ -1,8 +1,5 @@
 package lu.intech.tierion.lib
 
-import com.github.kittinunf.fuel.core.FuelError
-import com.github.kittinunf.fuel.core.Request
-import com.github.kittinunf.result.Result
 import org.slf4j.LoggerFactory
 
 object TierionLib {
@@ -37,7 +34,7 @@ object TierionLib {
         val result = Anchor.subscribeToBlock(callbackUrl)
         if(result.component2() != null) {
             val error = result.component2()!!
-            throw SubscribeToBlock(error.message, error.exception)
+            throw SubscribeToBlockException(error.message, error.exception)
         }
         return result.component1()!!
     }

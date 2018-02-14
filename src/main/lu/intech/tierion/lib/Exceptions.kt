@@ -5,14 +5,14 @@ class AnchorDataException(
         override val cause: Throwable?
 ):Throwable(message, cause)
 
-class SubscribeToBlock(
+class SubscribeToBlockException(
         override val message: String?,
         override val cause: Throwable?
 ):Throwable(message, cause)
 
 class GetReceiptException(
-                          override val message: String?,
-                          override val cause: Throwable?
+      override val message: String?,
+      override val cause: Throwable?
 ):Throwable(message, cause)
 
 class VerifyPayloadException(
